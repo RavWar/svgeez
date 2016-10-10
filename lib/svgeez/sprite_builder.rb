@@ -46,7 +46,7 @@ module Svgeez
         destination_file_contents = `cat <<EOF | svgo --disable=cleanupIDs -i - -o -\n#{destination_file_contents}\nEOF`
       end
 
-      destination_file_contents.insert(4, %( id="#{destination_file_id}" style="display: none;" version="1.1"))
+      destination_file_contents.insert(4, %( id="#{destination_file_id}" style="display: none;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"))
     end
 
     def collect_source_files_contents
